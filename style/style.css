@@ -3,17 +3,17 @@
    ========================================== */
 :root {
   /* Colores principales */
-  --primary-color: #2C3E50;        /* Azul oscuro elegante */
-  --primary-dark: #1A252F;         /* Azul más oscuro */
-  --primary-light: #34495E;        /* Azul claro */
+  --primary-color: #1a1a2e;        /* Azul marino profundo */
+  --primary-dark: #0f0f1e;         /* Azul marino muy oscuro */
+  --primary-light: #16213e;        /* Azul marino medio */
   
-  --secondary-color: #E74C3C;      /* Rojo vibrante para CTAs */
-  --secondary-dark: #C0392B;       /* Rojo oscuro */
-  --secondary-light: #EC7063;      /* Rojo claro */
+  --secondary-color: #e94560;      /* Rosa coral vibrante */
+  --secondary-dark: #c23750;       /* Rosa coral oscuro */
+  --secondary-light: #ff6b6b;      /* Rosa coral claro */
   
-  --accent-color: #F39C12;         /* Naranja/Dorado para destacados */
-  --accent-dark: #D68910;          /* Naranja oscuro */
-  --accent-light: #F5B041;         /* Naranja claro */
+  --accent-color: #f4a261;         /* Dorado arena */
+  --accent-dark: #e76f51;          /* Dorado arena oscuro */
+  --accent-light: #f4c261;         /* Dorado arena claro */
   
   /* Colores neutros */
   --white: #FFFFFF;
@@ -188,6 +188,7 @@ button {
   transition: var(--transition-base);
   cursor: pointer;
   border: 2px solid transparent;
+  letter-spacing: 0.025em;
 }
 
 .btn-primary {
@@ -197,7 +198,7 @@ button {
 
 .btn-primary:hover {
   background-color: var(--secondary-dark);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
@@ -208,24 +209,27 @@ button {
 
 .btn-secondary:hover {
   background-color: var(--primary-dark);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-outline {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-light);
-  border-color: var(--primary-color);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .btn-outline:hover {
-  background-color: var(--primary-color);
-  color: var(--text-light);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
 }
 
 .btn-lg {
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-size: var(--font-size-lg);
+  padding: 0.875rem 2rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
 }
 
 .btn-sm {
@@ -543,7 +547,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background-image: url("../assets/img/front-page.webp");
   overflow: hidden;
 }
 
@@ -584,9 +588,29 @@ button {
 
 .hero-buttons {
   display: flex;
-  gap: var(--spacing-md);
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: var(--spacing-xl);
+}
+
+.hero-buttons .btn {
+  min-width: 160px;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+
+
+.hero-buttons .btn-primary:hover {
+  box-shadow: 0 3px 10px rgba(233, 69, 96, 0.5);
+}
+
+.hero-buttons .btn-outline {
+  border-width: 1.5px;
 }
 
 /* ==========================================
@@ -666,6 +690,9 @@ button {
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: var(--transition-base);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .brand-logo-card:hover {
@@ -680,20 +707,20 @@ button {
   text-transform: uppercase;
 }
 
-.brand-logo-card.brand-zara {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.brand-logo-card.brand-imax {
+  background-image: url("../assets/img/imax-logo.jpg")
 }
 
-.brand-logo-card.brand-apple {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+.brand-logo-card.brand-levis{
+  background-image: url("../assets/img/levis-logo.png");
 }
 
 .brand-logo-card.brand-nike {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background-image: url("../assets/img/nike-logo.webp");
 }
 
 .brand-logo-card.brand-starbucks {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background-image: url("../assets/img/starbucks-logo.png");
 }
 
 .brand-logo-card.brand-starbucks h3 {
@@ -705,6 +732,25 @@ button {
   font-size: 3rem;
   color: var(--secondary-color);
   margin-bottom: var(--spacing-md);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para SVG dentro de feature-icon */
+.feature-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--secondary-color);
+  transition: var(--transition-base);
+}
+
+.feature-box:hover .feature-icon svg {
+  fill: var(--secondary-dark);
+  transform: scale(1.1);
 }
 
 .feature-box {
@@ -712,7 +758,7 @@ button {
 }
 
 .feature-box .card-body {
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-xl);
 }
 
 /* PROMO CARDS */
