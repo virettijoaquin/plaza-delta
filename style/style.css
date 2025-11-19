@@ -671,6 +671,16 @@ button {
   transition: var(--transition-base);
 }
 
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white) !important;
+}
+
+.social-link svg path {
+  fill: var(--white) !important;
+}
+
 .social-link:hover {
   background-color: var(--accent-color);
   transform: translateY(-3px);
@@ -1173,6 +1183,36 @@ button {
   height: 220px;
   object-fit: cover;
 }
+
+
+/* CALL TO ACTION (CTA) */
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-text {
+  font-size: var(--font-size-xl);
+  color: var(--medium-gray);
+  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 
 /* ==========================================
    RESPONSIVE
