@@ -1175,6 +1175,258 @@ button {
 }
 
 /* ==========================================
+   ENTRETENIMIENTO - PÁGINA
+   ========================================== */
+
+/* Contenedor principal de entretenimiento */
+.entertainment-container {
+    max-width: 1200px;
+    margin: 96px auto;
+    padding: 0 16px;
+}
+
+/* Título principal */
+.entertainment-container h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color: #1a1a2e;
+    margin-bottom: 24px;
+}
+
+/* Párrafo introductorio */
+.entertainment-container > p {
+    font-size: 18px;
+    color: #6C757D;
+    text-align: center;
+    margin-bottom: 48px;
+    line-height: 1.75;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Separadores */
+.entertainment-container hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #E9ECEF, transparent);
+    margin: 64px 0;
+}
+
+/* Títulos de sección (h2) */
+.entertainment-container h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #e94560;
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+/* Subtítulos (h3) */
+.entertainment-container h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+/* Párrafos normales */
+.entertainment-container p {
+    font-size: 16px;
+    color: #212529;
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+/* Listas */
+.entertainment-container ul {
+    margin-left: 32px;
+    margin-bottom: 24px;
+}
+
+.entertainment-container li {
+    font-size: 16px;
+    color: #212529;
+    line-height: 1.75;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 8px;
+}
+
+.entertainment-container li::marker {
+    color: #e94560;
+}
+
+/* Listas anidadas */
+.entertainment-container ul ul {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 24px;
+}
+
+.entertainment-container ul ul li {
+    font-size: 15px;
+    color: #6C757D;
+    margin-bottom: 8px;
+}
+
+/* Texto en negrita (strong) */
+.entertainment-container strong {
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
+/* Texto en cursiva (em) */
+.entertainment-container em {
+    color: #e94560;
+    font-style: italic;
+}
+
+/* Secciones especiales con caja */
+.entertainment-box {
+    background-color: #F8F9FA;
+    padding: 32px;
+    border-radius: 12px;
+    margin: 32px 0;
+    border-left: 4px solid #e94560;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Información de ubicación y horarios destacada */
+.entertainment-container p strong:first-child {
+    display: inline-block;
+    color: #e94560;
+    font-weight: 600;
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .entertainment-container {
+        margin: 48px auto;
+    }
+    
+    .entertainment-container h1 {
+        font-size: 28px;
+    }
+    
+    .entertainment-container h2 {
+        font-size: 24px;
+    }
+    
+    .entertainment-container h3 {
+        font-size: 18px;
+    }
+    
+    .entertainment-container > p {
+        font-size: 16px;
+    }
+    
+    .entertainment-container ul {
+        margin-left: 20px;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .entertainment-container {
+        padding: 0 12px;
+    }
+    
+    .entertainment-container h1 {
+        font-size: 24px;
+    }
+    
+    .entertainment-container h2 {
+        font-size: 20px;
+    }
+    
+    .entertainment-box {
+        padding: 20px;
+    }
+}
+
+/* ==========================================
+   PREGUNTAS FRECUENTES - FAQ PAGE
+   ========================================== */
+.faq-container {
+    max-width: 800px;
+    margin: 96px auto;
+    padding: 0 16px;
+}
+
+.faq-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    color: #1a1a2e;
+    margin-bottom: 48px;
+}
+
+.faq-section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 64px;
+    margin-bottom: 16px;
+    color: #e94560;
+    text-align: left;
+}
+
+/* Estilos para cada pregunta FAQ */
+details {
+    background-color: #F8F9FA;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la pregunta */
+summary {
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #1a1a2e;
+    list-style: none;
+}
+
+/* Oculta el marcador por defecto */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Añade flecha personalizada */
+summary::before {
+    content: "▼";
+    margin-right: 8px;
+    font-size: 14px;
+    color: #e94560;
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+
+/* Rota la flecha cuando está abierto */
+details[open] summary::before {
+    transform: rotate(180deg);
+}
+
+/* Estilos para la respuesta */
+details p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #6C757D;
+    line-height: 1.75;
+    padding-left: 13px;
+}
+
+/* ==========================================
    RESPONSIVE
    ========================================== */
 @media (max-width: 768px) {
