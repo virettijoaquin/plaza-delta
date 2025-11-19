@@ -3,17 +3,17 @@
    ========================================== */
 :root {
   /* Colores principales */
-  --primary-color: #2C3E50;        /* Azul oscuro elegante */
-  --primary-dark: #1A252F;         /* Azul más oscuro */
-  --primary-light: #34495E;        /* Azul claro */
+  --primary-color: #1a1a2e;        /* Azul marino profundo */
+  --primary-dark: #0f0f1e;         /* Azul marino muy oscuro */
+  --primary-light: #16213e;        /* Azul marino medio */
   
-  --secondary-color: #E74C3C;      /* Rojo vibrante para CTAs */
-  --secondary-dark: #C0392B;       /* Rojo oscuro */
-  --secondary-light: #EC7063;      /* Rojo claro */
+  --secondary-color: #e94560;      /* Rosa coral vibrante */
+  --secondary-dark: #c23750;       /* Rosa coral oscuro */
+  --secondary-light: #ff6b6b;      /* Rosa coral claro */
   
-  --accent-color: #F39C12;         /* Naranja/Dorado para destacados */
-  --accent-dark: #D68910;          /* Naranja oscuro */
-  --accent-light: #F5B041;         /* Naranja claro */
+  --accent-color: #f4a261;         /* Dorado arena */
+  --accent-dark: #e76f51;          /* Dorado arena oscuro */
+  --accent-light: #f4c261;         /* Dorado arena claro */
   
   /* Colores neutros */
   --white: #FFFFFF;
@@ -188,6 +188,7 @@ button {
   transition: var(--transition-base);
   cursor: pointer;
   border: 2px solid transparent;
+  letter-spacing: 0.025em;
 }
 
 .btn-primary {
@@ -197,7 +198,7 @@ button {
 
 .btn-primary:hover {
   background-color: var(--secondary-dark);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
@@ -208,24 +209,27 @@ button {
 
 .btn-secondary:hover {
   background-color: var(--primary-dark);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-outline {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-light);
-  border-color: var(--primary-color);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .btn-outline:hover {
-  background-color: var(--primary-color);
-  color: var(--text-light);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
 }
 
 .btn-lg {
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-size: var(--font-size-lg);
+  padding: 0.875rem 2rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
 }
 
 .btn-sm {
@@ -543,7 +547,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background-image: url("../assets/img/front-page.webp");
   overflow: hidden;
 }
 
@@ -584,9 +588,29 @@ button {
 
 .hero-buttons {
   display: flex;
-  gap: var(--spacing-md);
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: var(--spacing-xl);
+}
+
+.hero-buttons .btn {
+  min-width: 160px;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+
+
+.hero-buttons .btn-primary:hover {
+  box-shadow: 0 3px 10px rgba(233, 69, 96, 0.5);
+}
+
+.hero-buttons .btn-outline {
+  border-width: 1.5px;
 }
 
 /* ==========================================
@@ -666,11 +690,14 @@ button {
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: var(--transition-base);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .brand-logo-card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .brand-logo-card h3 {
@@ -680,24 +707,77 @@ button {
   text-transform: uppercase;
 }
 
-.brand-logo-card.brand-zara {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.brand-logo-card.brand-imax {
+  background-image: url("../assets/img/imax-logo.jpg")
 }
 
-.brand-logo-card.brand-apple {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+.brand-logo-card.brand-levis{
+  background-image: url("../assets/img/levis-logo.png");
 }
 
 .brand-logo-card.brand-nike {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background-image: url("../assets/img/nike-logo.webp");
 }
 
 .brand-logo-card.brand-starbucks {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background-image: url("../assets/img/starbucks-logo.png");
 }
 
 .brand-logo-card.brand-starbucks h3 {
   color: var(--text-primary);
+}
+
+/* CAROUSEL */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-lg) var(--spacing-lg) 0;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-container:active {
+  cursor: grabbing;
+}
+
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(25% - var(--spacing-lg) * 3 / 4);
+  gap: var(--spacing-lg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  padding-bottom: var(--spacing-md);
+}
+
+.carousel-pagination {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: var(--transition-base);
+  border: none;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background-color: var(--gray);
+  transform: scale(1.2);
+}
+
+.carousel-dot.active {
+  background-color: var(--secondary-color);
+  width: 32px;
+  border-radius: 6px;
 }
 
 /* FEATURE ICONS */
@@ -705,6 +785,25 @@ button {
   font-size: 3rem;
   color: var(--secondary-color);
   margin-bottom: var(--spacing-md);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para SVG dentro de feature-icon */
+.feature-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--secondary-color);
+  transition: var(--transition-base);
+}
+
+.feature-box:hover .feature-icon svg {
+  fill: var(--secondary-dark);
+  transform: scale(1.1);
 }
 
 .feature-box {
@@ -712,100 +811,307 @@ button {
 }
 
 .feature-box .card-body {
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-xl);
 }
 
-/* PROMO CARDS */
-.promo-highlight {
-  text-align: center;
-  padding: var(--spacing-2xl);
-  background: rgba(255, 255, 255, 0.1);
+/* PROMO CARDS - Nuevo diseño */
+.promo-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.promo-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  overflow: hidden;
   transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
 }
 
-.promo-highlight:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-3px);
+.promo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: var(--secondary-color);
+  opacity: 0.05;
+  border-radius: 50%;
+  transform: translate(30%, -30%);
 }
 
-.promo-icon {
-  font-size: 4rem;
+.promo-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+.promo-featured {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.promo-badge {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--white);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.promo-content {
+  position: relative;
+  z-index: 1;
+}
+
+.promo-category {
+  display: inline-block;
   color: var(--accent-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.promo-heading {
+  color: var(--white);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+.promo-card:not(.promo-featured) .promo-heading {
+  font-size: var(--font-size-xl);
+}
+
+.promo-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
   margin-bottom: var(--spacing-md);
 }
 
-.promo-title {
-  color: var(--text-light);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--spacing-sm);
+.promo-validity {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--font-size-sm);
+  font-style: italic;
 }
 
-.promo-subtitle {
-  color: var(--medium-gray);
-  font-size: var(--font-size-base);
+/* SERVICES - Nuevo diseño */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
-/* SERVICE ICONS */
-.service-item {
-  text-align: center;
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  background: var(--white);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--secondary-color);
+  transition: height 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card:hover::after {
+  height: 100%;
+}
+
+.service-icon-wrapper {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.2);
 }
 
 .service-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 2rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.service-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
+.service-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--white) !important;
+}
+
+.service-icon svg path {
+  fill: var(--white) !important;
+}
+
+.service-info {
+  flex: 1;
+}
+
+.service-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.3;
 }
 
-.service-description {
-  font-size: var(--font-size-sm);
+.service-detail {
   color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.4;
 }
 
-/* HORARIOS CARDS */
-.schedule-grid {
-  max-width: 800px;
+.service-badge {
+  display: inline-block;
+  background: rgba(233, 69, 96, 0.1);
+  color: var(--secondary-color);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* HORARIOS - Nuevo diseño */
+.schedule-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.schedule-card {
-  text-align: center;
+.schedule-card-modern {
+  display: flex;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  border-left: 4px solid var(--primary-color);
 }
 
-.schedule-title {
-  color: var(--primary-color);
+.schedule-card-modern:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-left-color: var(--secondary-color);
+}
+
+.schedule-card-modern:nth-child(2) {
+  border-left-color: var(--accent-color);
+}
+
+.schedule-card-modern:nth-child(2):hover {
+  border-left-color: var(--secondary-color);
+}
+
+.schedule-icon-wrapper {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.15);
+}
+
+.schedule-card-modern:nth-child(2) .schedule-icon-wrapper {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+}
+
+.schedule-icon-wrapper svg {
+  width: 35px;
+  height: 35px;
+  fill: var(--white);
+}
+
+.schedule-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.schedule-heading {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  margin: 0;
 }
 
-.schedule-content {
-  margin: var(--spacing-lg) 0;
+.schedule-time-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
-.schedule-day {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
-  margin-bottom: var(--spacing-sm);
-}
-
-.schedule-hours {
-  font-size: var(--font-size-2xl);
-  color: var(--secondary-color);
-  font-weight: var(--font-weight-bold);
-  margin: var(--spacing-sm) 0;
-}
-
-.schedule-note {
+.schedule-days {
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.schedule-hours-large {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--secondary-color);
+  line-height: 1;
+}
+
+.schedule-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 /* CONTACT BUTTONS */
@@ -921,6 +1227,19 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .carousel-track {
+    grid-auto-columns: calc(50% - var(--spacing-lg) / 2);
+  }
+
+  .promo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-featured {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .section {
     padding: var(--spacing-2xl) 0;
   }
@@ -937,5 +1256,23 @@ button {
 
   .hero-subtitle {
     font-size: var(--font-size-base);
+  }
+
+  .carousel-track {
+    grid-auto-columns: 100%;
+  }
+
+  .schedule-container {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-card-modern {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .schedule-hours-large {
+    font-size: var(--font-size-2xl);
   }
 }
