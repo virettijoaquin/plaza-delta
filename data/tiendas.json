@@ -308,19 +308,7 @@
       "badgeColor": "accent",
       "url": null
     },
-     {
-      "id": 29,
-      "nombre": "Zara",
-      "categoria": "moda",
-      "descripcion": "Moda y accesorios para toda la familia",
-      "ubicacion": "Planta Baja - Local 12",
-      "logo": "Z",
-      "logoImg": "../assets/img/logos/zara-logo.png",
-      "badgeColor": "primary",
-      "url": null
-    }
-  ,
-      {
+    {
       "id": 30,
       "nombre": "Capa x Capa",
       "categoria": "tecnología",
@@ -331,7 +319,7 @@
       "badgeColor": "primary",
       "url": "https://leonardogmartinez.github.io/comercio"
     },
-          {
+    {
       "id": 30,
       "nombre": "Silver Sea",
       "categoria": "moda",
@@ -353,7 +341,7 @@
       "badgeColor": "secondary",
       "url": "https://sfeas1.github.io/localcomercial/"
     },
-     {
+    {
       "id": 32,
       "nombre": "Lumen",
       "categoria": "accesorios",
