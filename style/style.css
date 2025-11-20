@@ -202,6 +202,13 @@ button {
   box-shadow: var(--shadow-md);
 }
 
+.btn-primary.active {
+  background-color: var(--primary-color);
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.8;
+}
+
 .btn-secondary {
   background-color: var(--primary-color);
   color: var(--text-light);
@@ -462,6 +469,25 @@ button {
 
 .navbar-link:hover::after {
   width: 100%;
+}
+
+.navbar-link.active {
+  color: var(--secondary-color);
+  font-weight: var(--font-weight-bold);
+  pointer-events: none;
+  cursor: default;
+}
+
+.navbar-link.active::after {
+  width: 100%;
+}
+
+.dropdown-menu .active {
+  color: var(--secondary-color);
+  font-weight: var(--font-weight-bold);
+  pointer-events: none;
+  cursor: default;
+  background-color: var(--bg-secondary);
 }
 
 .navbar-toggle {

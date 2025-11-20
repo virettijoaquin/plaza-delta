@@ -303,6 +303,23 @@
   transition: var(--transition-base);
 }
 
+.schedule-card .card-body {
+  text-align: center;
+}
+
+.schedule-card .schedule-title {
+  text-align: center;
+}
+
+.schedule-card .schedule-content {
+  text-align: center;
+}
+
+.schedule-card .schedule-day,
+.schedule-card .schedule-hours {
+  text-align: center;
+}
+
 @media (max-width: 968px) {
   .gastro-intro-container {
     grid-template-columns: 1fr;
