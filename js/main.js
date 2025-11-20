@@ -201,25 +201,44 @@ function initActiveNavLinks() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-link');
 
+    // Guardar enlaces que ya tienen active desde el HTML (páginas actuales)
+    const preActiveLinks = [];
+    navLinks.forEach(link => {
+        if (link.classList.contains('active')) {
+            preActiveLinks.push(link);
+        }
+    });
+
+    // También guardar enlaces activos en dropdown
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu a.active');
+
     window.addEventListener('scroll', function() {
-        let current = '';
-        const headerHeight = document.querySelector('.header').offsetHeight;
+        // Solo activar scroll links si NO hay enlaces pre-activos (páginas multi-página)
+        // y solo para enlaces con href que empiecen con #
+        if (preActiveLinks.length === 0 && dropdownLinks.length === 0) {
+            let current = '';
+            const headerHeight = document.querySelector('.header').offsetHeight;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight - 100;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 100;
+                const sectionHeight = section.clientHeight;
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                // Solo modificar enlaces de tipo anchor (#)
+                if (href && href.startsWith('#')) {
+                    link.classList.remove('active');
+                    if (href === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
 
         // Cambiar estilo del header al hacer scroll
         const header = document.querySelector('.header');

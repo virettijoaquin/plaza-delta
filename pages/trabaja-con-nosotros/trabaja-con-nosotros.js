@@ -65,7 +65,7 @@ $(document).ready(function() {
                 'Material didáctico provisto',
                 'Capacitaciones especializadas en pedagogía infantil'
             ],
-            horario: 'Lunes a viernes de 9:00 a 18:00',
+            horario: 'Lunes a viernes de 10:00 a 18:00',
             contrato: 'Relación de dependencia directa con convenio docente'
         },
         'Personal de Seguridad': {
