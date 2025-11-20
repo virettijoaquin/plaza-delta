@@ -2428,6 +2428,7 @@ details p {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-3xl);
   margin-top: var(--spacing-3xl);
+  max-width: 100%;
 }
 
 /* Columna de información */
@@ -2722,14 +2723,21 @@ details p {
   .contact-layout {
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
+    overflow-x: hidden;
   }
-  
+
   .contact-form-card {
     position: static;
   }
-  
+
   .contact-map-wrapper {
     padding-bottom: 66.67%; /* Aspect ratio 3:2 en tablet */
+  }
+
+  .contact-info-column,
+  .contact-form-column {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -2737,24 +2745,30 @@ details p {
   .hero-simple {
     padding: var(--spacing-3xl) 0 var(--spacing-2xl);
   }
-  
+
   .contact-info-card,
   .contact-map-container,
   .contact-form-card {
     padding: var(--spacing-lg);
+    max-width: 100%;
+    overflow-x: hidden;
   }
-  
+
   .contact-item {
     flex-direction: column;
     gap: var(--spacing-md);
   }
-  
+
   .btn-whatsapp {
     font-size: var(--font-size-base);
   }
-  
+
   .contact-map-wrapper {
     padding-bottom: 75%; /* Aspect ratio 4:3 en móvil */
+  }
+
+  .section {
+    overflow-x: hidden;
   }
 }
 
