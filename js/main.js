@@ -209,6 +209,7 @@ function initScrollAnimations() {
 function initActiveNavLinks() {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".navbar-link");
+  const allNavbarLinks = document.querySelectorAll('.navbar-menu a');
   const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
 
   // Guardar TODOS los enlaces que ya tienen active desde el HTML (páginas actuales)
@@ -216,28 +217,25 @@ function initActiveNavLinks() {
   const preActiveButtons = [];
   const preActiveDropdownLinks = [];
 
-  navLinks.forEach(link => {
+  // Revisar todos los enlaces del navbar (incluyendo botones)
+  allNavbarLinks.forEach(link => {
     if (link.classList.contains('active')) {
       // Distinguir entre enlaces normales y botones
       if (link.classList.contains('btn')) {
         preActiveButtons.push(link);
+      } else if (link.parentElement.parentElement.classList.contains('dropdown-menu')) {
+        preActiveDropdownLinks.push(link);
       } else {
         preActiveLinks.push(link);
       }
     }
   });
 
-  // También guardar enlaces activos en dropdown
-  dropdownLinks.forEach(link => {
-    if (link.classList.contains('active')) {
-      preActiveDropdownLinks.push(link);
-    }
-  });
-
   window.addEventListener("scroll", function () {
     // Solo activar scroll links si NO hay enlaces pre-activos (páginas multi-página)
     // y solo para enlaces con href que empiecen con #
-    if (preActiveLinks.length === 0 && preActiveDropdownLinks.length === 0) {
+    // Y solo si hay secciones con id en la página
+    if (preActiveLinks.length === 0 && preActiveDropdownLinks.length === 0 && preActiveButtons.length === 0 && sections.length > 0) {
       let current = "";
       const headerHeight = document.querySelector(".header").offsetHeight;
 
@@ -250,16 +248,19 @@ function initActiveNavLinks() {
         }
       });
 
-      navLinks.forEach(link => {
-        const href = link.getAttribute("href");
-        // Solo modificar enlaces de tipo anchor (#) y que NO sean botones pre-activos
-        if (href && href.startsWith("#") && !preActiveButtons.includes(link)) {
-          link.classList.remove("active");
-          if (href === `#${current}`) {
-            link.classList.add("active");
+      // Solo modificar enlaces si hay una sección actual detectada
+      if (current) {
+        navLinks.forEach(link => {
+          const href = link.getAttribute("href");
+          // Solo modificar enlaces de tipo anchor (#)
+          if (href && href.startsWith("#")) {
+            link.classList.remove("active");
+            if (href === `#${current}`) {
+              link.classList.add("active");
+            }
           }
-        }
-      });
+        });
+      }
     }
 
     // Cambiar estilo del header al hacer scroll
