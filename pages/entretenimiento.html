@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plaza Delta - Tu lugar">
+    <title>Plaza Delta | Entretenimiento</title>
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="navbar-brand">
+                    <img src="../assets/icons/logo.png" alt="Plaza Delta">
+                </a>
+                
+                <div class="navbar-toggle" id="navbarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="../index.html" class="navbar-link">Home</a></li>
+
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Tiendas <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="locales-comerciales.html">Locales Comerciales</a></li>
+                            <li><a href="gastronomia/gastronomia.html">Gastronomía</a></li>
+                            <li><a href="entretenimiento.html" class="active">Entretenimiento</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Experiencias <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="promociones/promociones.html">Promociones</a></li>
+                            <li><a href="ofertas/ofertas.html">Ofertas</a></li>
+                            <li><a href="servicios/servicios.html">Servicios</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Ayuda <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                            <li><a href="mapa-del-sitio.html">Mapa del Sitio</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="trabaja-con-nosotros/trabaja-con-nosotros.html" class="btn btn-primary btn-sm">Trabajá con Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ENTRETENIMIENTO - CONTENIDO -->
+    <div class="entertainment-container">
+        <h1>Entretenimiento</h1>
+        <p>En nuestra galería comercial no solo compras, ¡también te divertís! Descubrí todas las opciones de entretenimiento disponibles para vos.</p>
+
+        <!-- GRID DE CARDS DE ENTRETENIMIENTO -->
+        <div class="entertainment-grid">
+            
+            <!-- CARD 1: CINES MULTIPLEX -->
+            <div class="entertainment-card" data-area="cines">
+                <div class="entertainment-card-image">
+                    <img src="../assets/img/entretenimiento/cine.jpg" alt="Complejo de Cines Multiplex">
+                    <div class="entertainment-card-overlay">
+                        <span class="entertainment-icon">🎬</span>
+                    </div>
+                </div>
+                <div class="entertainment-card-header">
+                    <h2>Complejo de Cines Multiplex</h2>
+                    <p class="entertainment-card-preview">Disfrutá de los últimos estrenos en nuestras 6 salas con última tecnología</p>
+                    <button class="entertainment-expand-btn" aria-label="Expandir información">
+                        <span class="expand-icon">+</span>
+                    </button>
+                </div>
+                <div class="entertainment-card-content">
+                    <div class="entertainment-detail-section">
+                        <h3>Características:</h3>
+                        <ul>
+                            <li><strong>Salas:</strong> 6 salas con capacidad de 80 a 250 personas</li>
+                            <li><strong>Tecnología:</strong> Pantallas gigantes, sonido Dolby Atmos</li>
+                            <li><strong>Formatos especiales:</strong>
+                                <ul>
+                                    <li>Sala 3D</li>
+                                    <li>Sala 4DX (con efectos de movimiento, agua, viento y aromas)</li>
+                                    <li>Sala Premium con asientos reclinables VIP</li>
+                                </ul>
+                            </li>
+                            <li><strong>Horarios:</strong> Funciones desde las 11:00 AM hasta las 11:00 PM</li>
+                            <li><strong>Snacks:</strong> Pochoclos, nachos, bebidas, dulces y combos especiales</li>
+                        </ul>
+                    </div>
+
+                    <div class="entertainment-detail-section">
+                        <h3>Servicios Especiales:</h3>
+                        <ul>
+                            <li>Reserva de entradas por internet</li>
+                            <li>Funciones especiales para niños los domingos por la mañana</li>
+                            <li>Noches de películas clásicas los miércoles</li>
+                            <li>Descuentos especiales por cumpleaños</li>
+                            <li>Salas accesibles para personas con discapacidad</li>
+                        </ul>
+                    </div>
+
+                    <div class="entertainment-info-box">
+                        <div class="info-item">
+                            <strong>Ubicación:</strong> Tercer piso
+                        </div>
+                        <div class="info-item info-highlight">
+                            <strong>Cartelera Online:</strong> Podés ver nuestra cartelera y reservar tus entradas en 
+                            <a href="https://multiplex.com.ar/" target="_blank" rel="noopener noreferrer" class="external-link">multiplex.com.ar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2: GAME ZONE -->
+            <div class="entertainment-card" data-area="gamezone">
+                <div class="entertainment-card-image">
+                    <img src="../assets/img/entretenimiento/gaming.jpg" alt="Game Zone - Videojuegos y Realidad Virtual">
+                    <div class="entertainment-card-overlay">
+                        <span class="entertainment-icon">🎮</span>
+                    </div>
+                </div>
+                <div class="entertainment-card-header">
+                    <h2>Game Zone - Videojuegos y VR</h2>
+                    <p class="entertainment-card-preview">La zona de videojuegos más moderna de la ciudad para gamers de todas las edades</p>
+                    <button class="entertainment-expand-btn" aria-label="Expandir información">
+                        <span class="expand-icon">+</span>
+                    </button>
+                </div>
+                <div class="entertainment-card-content">
+                    <div class="entertainment-detail-section">
+                        <h3>¿Qué encontrás?</h3>
+                        <ul>
+                            <li><strong>Máquinas arcade clásicas:</strong> Pac-Man, Street Fighter, Mortal Kombat, y más</li>
+                            <li><strong>Simuladores:</strong>
+                                <ul>
+                                    <li>Simulador de carreras con asientos de movimiento</li>
+                                    <li>Simulador de vuelo</li>
+                                    <li>Cabinas de baile (Dance Dance Revolution, Just Dance)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Realidad Virtual (VR):</strong>
+                                <ul>
+                                    <li>4 estaciones de VR con los últimos juegos</li>
+                                    <li>Experiencias inmersivas de aventura, terror y deportes</li>
+                                    <li>Montaña rusa virtual</li>
+                                </ul>
+                            </li>
+                            <li><strong>Consolas modernas:</strong> PlayStation 5, Xbox Series X, Nintendo Switch</li>
+                            <li><strong>Zona de competencia:</strong> Área para torneos y juego en equipo</li>
+                        </ul>
+                    </div>
+
+                    <div class="entertainment-detail-section">
+                        <h3>Sistema de Juego:</h3>
+                        <p>Comprá tu tarjeta recargable Game Zone en la entrada y usala en todas las máquinas. Acumulá puntos y canjealos por premios en nuestra tienda de regalos.</p>
+                    </div>
+
+                    <div class="entertainment-info-box">
+                        <div class="info-item">
+                            <strong>Ubicación:</strong> Tercer piso
+                        </div>
+                        <div class="info-item">
+                            <strong>Horario:</strong> Lunes a jueves 12:00 PM - 19:00 PM<br>
+                            Viernes a domingo 11:00 AM - 10:00 PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3: BOWLING -->
+            <div class="entertainment-card" data-area="bowling">
+                <div class="entertainment-card-image">
+                    <img src="../assets/img/entretenimiento/bowling.jpg" alt="Bowling Strike Zone">
+                    <div class="entertainment-card-overlay">
+                        <span class="entertainment-icon">🎳</span>
+                    </div>
+                </div>
+                <div class="entertainment-card-header">
+                    <h2>Bowling "Strike Zone"</h2>
+                    <p class="entertainment-card-preview">¡Diversión para toda la familia! Nuestro bowling de 8 pistas te espera</p>
+                    <button class="entertainment-expand-btn" aria-label="Expandir información">
+                        <span class="expand-icon">+</span>
+                    </button>
+                </div>
+                <div class="entertainment-card-content">
+                    <div class="entertainment-detail-section">
+                        <h3>¿Cómo funciona?</h3>
+                        <ul>
+                            <li>8 pistas de bowling profesional</li>
+                            <li>Sistema automático de puntuación en pantallas</li>
+                            <li>Bolas de diferentes tamaños para grandes y niños</li>
+                            <li>Barandas automáticas para niños</li>
+                        </ul>
+                    </div>
+
+                    <div class="entertainment-info-box">
+                        <div class="info-item">
+                            <strong>Ubicación:</strong> Sótano nivel -1
+                        </div>
+                        <div class="info-item">
+                            <strong>Horario:</strong> Todos los días de 2:00 PM a 11:00 PM
+                        </div>
+                        <div class="info-item">
+                            <strong>Snack Bar:</strong> Pizzas, hamburguesas, nachos y bebidas disponibles
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 4: MINI PARQUE -->
+            <div class="entertainment-card" data-area="miniparque">
+                <div class="entertainment-card-image">
+                    <img src="../assets/img/entretenimiento/carrusel.jpg" alt="Mini Parque de Diversiones">
+                    <div class="entertainment-card-overlay">
+                        <span class="entertainment-icon">🎪</span>
+                    </div>
+                </div>
+                <div class="entertainment-card-header">
+                    <h2>Mini Parque de Diversiones</h2>
+                    <p class="entertainment-card-preview">Para los más pequeños, tenemos un mini parque con atracciones seguras y divertidas</p>
+                    <button class="entertainment-expand-btn" aria-label="Expandir información">
+                        <span class="expand-icon">+</span>
+                    </button>
+                </div>
+                <div class="entertainment-card-content">
+                    <div class="entertainment-detail-section">
+                        <h3>Atracciones:</h3>
+                        <ul>
+                            <li>Carrusel clásico de caballitos</li>
+                            <li>Tazas giratorias</li>
+                            <li>Trenecito que recorre el centro comercial</li>
+                            <li>Camas elásticas pequeñas</li>
+                        </ul>
+                    </div>
+
+                    <div class="entertainment-info-box">
+                        <div class="info-item">
+                            <strong>Ubicación:</strong> Segundo piso
+                        </div>
+                        <div class="info-item">
+                            <strong>Horario:</strong> Sábados, domingos y feriados de 11:00 AM a 8:00 PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN FUN PASS (separada) -->
+        <div class="fun-pass-section">
+            <div class="fun-pass-header">
+                <span class="fun-pass-icon">💳</span>
+                <h2>Tarjeta de Entretenimiento "Fun Pass"</h2>
+            </div>
+            <p class="fun-pass-intro">Ahorrá dinero y disfrutá más con nuestra tarjeta recargable que funciona en TODAS las áreas de entretenimiento.</p>
+            
+            <div class="fun-pass-benefits">
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <p>Úsala en Game Zone, Bowling, y más</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <p>Acumulá puntos por cada visita</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <p>Descuentos especiales los diferentes días de la semana</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <p>Sin fecha de vencimiento</p>
+                </div>
+            </div>
+            
+            <p class="fun-pass-cta">Adquirí tu Fun Pass en cualquiera de nuestras áreas de entretenimiento.</p>
+        </div>
+
+        <!-- SECCIÓN FINAL -->
+        <div class="entertainment-footer">
+            <h2>¡La Diversión Comienza Acá!</h2>
+            <p>Ya sea que vengas solo, con amigos o en familia, tenemos opciones para todos los gustos y edades. Combiná tus compras con entretenimiento de primer nivel y hacé de tu visita una experiencia inolvidable.</p>
+            <p><strong>Para más información sobre horarios, precios y reservas, visitá nuestro punto de atención al cliente o llamanos al 11 234 5678</strong></p>
+            <p><em>¡Te esperamos para vivir momentos increíbles!</em></p>
+        </div>
+    </div>
+
+    <!-- CONTACTO RÁPIDO -->
+    <section class="section section-dark" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contactanos</h2>
+            <p class="section-subtitle">Estamos para ayudarte</p>
+            
+            <div class="contact-cta-container">
+                <a href="pages/contacto.html" class="btn btn-primary btn-lg">Formulario de Contacto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Plaza Delta</h3>
+                    <p>El centro comercial más completo de la ciudad, con las mejores marcas y experiencias para toda la familia.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <p><a href="../index.html#tiendas">Directorio de Tiendas</a></p>
+                    <p><a href="promociones/promociones.html">Promociones</a></p>
+                    <p><a href="servicios/servicios.html">Servicios</a></p>
+                    <p><a href="contacto.html">Contacto</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Información</h3>
+                    <p><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></p>
+                    <p><a href="trabaja-con-nosotros/trabaja-con-nosotros.html">Trabaja con Nosotros</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Suscribite para recibir ofertas exclusivas y novedades.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Tu email" class="newsletter-input">
+                        <button class="btn btn-primary newsletter-button">Suscribirse</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Plaza Delta Centro Comercial. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/entertainment.js"></script>
+</body>
+</html>
