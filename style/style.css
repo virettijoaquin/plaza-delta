@@ -722,7 +722,7 @@ button {
 }
 
 .brand-logo-card.brand-levis{
-  background-image: url("../assets/img/levis-logo.png");
+  background-image: url("../assets/img/logos/levis-logo.png");
 }
 
 .brand-logo-card.brand-nike {
@@ -736,6 +736,42 @@ button {
 .brand-logo-card.brand-starbucks h3 {
   color: var(--text-primary);
 }
+.brand-logo-card.brand-zara {
+  background-image: url("../assets/img/logos/zara-logo.png")
+}
+
+.brand-logo-card.brand-pandora {
+  background-image: url("../assets/img/logos/pandora-logo.png")
+}
+
+.brand-logo-card.brand-deandennis {
+  background-image: url("../assets/img/logos/deandennis-logo.png")
+}
+
+.brand-logo-card.brand-hollister {
+  background-image: url("../assets/img/logos/hollister-logo.png")
+}
+
+.brand-logo-card.brand-portsaid {
+  background-image: url("../assets/img/logos/portsaid-logo.png")
+}
+
+.brand-logo-card.brand-macowens {
+  background-image: url("../assets/img/logos/macowens-logo.png")
+}
+
+.brand-logo-card.brand-luccianos {
+  background-image: url("../assets/img/logos/luccianos-logo.png")
+}
+
+.brand-logo-card.brand-samsung {
+  background-image: url("../assets/img/logos/samsung-logo.png")
+}
+
+.brand-logo-card.brand-silversea {
+  background-image: url("../assets/img/logos/maria-logo2.png")
+}
+
 
 /* CAROUSEL */
 .carousel-container {
