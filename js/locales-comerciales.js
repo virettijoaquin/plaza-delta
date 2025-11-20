@@ -88,10 +88,28 @@ function createStoreCard(tienda) {
             <p class="store-location">📍 ${tienda.ubicacion}</p>
         </div>
         <div class="store-card-footer">
-            <a href="mapa.html?tienda=${tienda.id}" class="btn btn-outline-secondary">Ver en mapa</a>
+            <button class="btn btn-outline-secondary btn-ver-mapa" data-tienda-id="${tienda.id}" data-piso="${tienda.piso}">Ver en mapa</button>
             ${websiteButton}
         </div>
     `;
+    
+    // Añadir event listener al botón "Ver en mapa"
+    setTimeout(() => {
+        const btnVerMapa = card.querySelector('.btn-ver-mapa');
+        if (btnVerMapa) {
+            btnVerMapa.addEventListener('click', function() {
+                const tiendaId = this.getAttribute('data-tienda-id');
+                const piso = this.getAttribute('data-piso');
+                
+                // Guardar en localStorage
+                localStorage.setItem('selectedTienda', tiendaId);
+                localStorage.setItem('selectedPiso', piso);
+                
+                // Redirigir a mapa.html
+                window.location.href = 'mapa.html';
+            });
+        }
+    }, 0);
     
     return card;
 }
