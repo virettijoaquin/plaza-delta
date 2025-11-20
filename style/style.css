@@ -2551,8 +2551,6 @@ details p {
   padding: var(--spacing-2xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  position: sticky;
-  top: var(--spacing-xl);
 }
 
 .form-description {
