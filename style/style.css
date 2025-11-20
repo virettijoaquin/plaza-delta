@@ -2922,13 +2922,13 @@ details p {
 }
 
 #tiendas-list .tienda small {
-  color: var(--text-muted);
   font-size: var(--font-size-sm);
-  background: var(--primary-color);
-  color: var(--white);
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
   display: inline-block;
+  font-weight: 500;
 }
 
 /* Scrollbar personalizado para la lista */
