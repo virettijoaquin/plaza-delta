@@ -3395,6 +3395,21 @@ details p {
   justify-content: center;
 }
 
+.store-card-footer .btn-ver-mapa {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.store-card-footer .btn-ver-mapa:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 /* Botón de sitio web sutil */
 .btn-website {
   display: inline-flex;

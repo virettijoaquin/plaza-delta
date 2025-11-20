@@ -406,8 +406,33 @@ if (busqueda) {
       renderTiendasList();
       renderTiendasOnMap();
       filterStores();
+      
+      // Verificar si hay una tienda seleccionada en localStorage
+      checkSelectedTienda();
     } catch (error) {
       console.error('Error:', error);
+    }
+  }
+  
+  // Verificar si hay una tienda seleccionada desde locales-comerciales
+  function checkSelectedTienda() {
+    const selectedTiendaId = localStorage.getItem('selectedTienda');
+    const selectedPiso = localStorage.getItem('selectedPiso');
+    
+    if (selectedTiendaId) {
+      // Buscar la tienda por ID
+      const tienda = tiendasData.find(t => t.id == selectedTiendaId);
+      
+      if (tienda) {
+        // Pequeño delay para asegurar que todo esté renderizado
+        setTimeout(() => {
+          showTiendaOnMap(tienda);
+        }, 300);
+      }
+      
+      // Limpiar localStorage después de usar
+      localStorage.removeItem('selectedTienda');
+      localStorage.removeItem('selectedPiso');
     }
   }
 
